@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM	alpine:latest
 
 RUN		apk update
 RUN		apk add php7 php7-mysqli php7-fpm php7-curl php7-json php7-mbstring php7-xml php7-zip php7-gd php7-soap php7-ssh2 php7-tokenizer
