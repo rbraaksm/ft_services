@@ -1,0 +1,41 @@
+FT_SERVICES
+
+https://mvallim.github.io/kubernetes-under-the-hood/documentation/kube-metallb.html
+
+https://codingbee.net/tutorials/kubernetes/using-docker-with-minikube
+Command: minikube docker-env
+
+https://www.digicert.com/kb/ssl-support/openssl-quick-reference-guide.htm
+Openssl req
+
+https://kubernetes.io/docs/reference/access-authn-authz/rbac/
+
+https://www.nginx.com/blog/tuning-nginx/
+Worker processes and worker connections
+
+https://gist.github.com/nishantmodak/d08aae033775cb1a0f8a
+https://gist.github.com/rayshan/70339d8bd4c76b962e48f69fcb34fc61
+https://medium.com/adrixus/beginners-guide-to-nginx-configuration-files-527fcd6d5efd
+https://www.linode.com/docs/guides/how-to-configure-nginx/
+Nginx.config
+
+https://www.pascallandau.com/blog/structuring-the-docker-setup-for-php-projects/
+https://www.cyberciti.biz/faq/how-to-install-php-7-fpm-on-alpine-linux/
+https://adamlangley.com.au/install-php-7-3-required-php-extensions-for-wordpress-on-ubuntu-nginx/
+(Extension wordpress)
+Php
+
+https://www.javaguicodexample.com/phpmyadminmysqlphpiis1.html
+Config-file
+
+https://wordpress.org/support/article/nginx/
+Wordpress -> nginx.config
+
+https://code.tutsplus.com/articles/download-and-install-wordpress-via-the-shell-over-ssh--wp-24403
+Set.sh wordpress
+
+https://linoxide.com/linux-how-to/configure-vsftpd-sftp-ubuntu/
+Ftps
+
+https://www.digitalocean.com/community/tutorials/how-to-set-up-vsftpd-for-a-user-s-directory-on-ubuntu-16-04
+Vsftpd.conf
