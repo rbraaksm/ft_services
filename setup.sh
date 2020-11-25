@@ -26,14 +26,14 @@ kubectl apply -f srcs/serviceaccount.yaml
 docker build -t my-nginx srcs/nginx/
 kubectl apply -f srcs/nginx/nginx.yaml
 
-# # Creating ftps:
-# docker build -t my-ftps srcs/ftps/
-# kubectl apply -f srcs/ftps/ftps.yaml
+# Creating ftps:
+docker build -t my-ftps srcs/ftps/
+kubectl apply -f srcs/ftps/ftps.yaml
 
-# # Creating phpmyadmin:
-# docker build -t my-phpmyadmin srcs/phpmyadmin/
-# kubectl apply -f srcs/phpmyadmin/phpmyadmin.yaml
+# Creating phpmyadmin:
+docker build -t my-phpmyadmin srcs/phpmyadmin/
+kubectl apply -f srcs/phpmyadmin/phpmyadmin.yaml
 
-# # Creating wordpress:
-# docker build -t wordpress srcs/wordpress/
-# kubectl apply -f srcs/wordpress/wordpress.yaml
+# Creating wordpress:
+docker build -t wordpress srcs/wordpress/
+kubectl apply -f srcs/wordpress/wordpress.yaml

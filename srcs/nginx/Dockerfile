@@ -27,4 +27,4 @@ RUN chmod +x setup.sh
 
 EXPOSE 22 80 443
 
-CMD ./setup.sho
+CMD ./setup.sh

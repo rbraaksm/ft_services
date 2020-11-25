@@ -14,7 +14,7 @@ spec:
       labels:
         app: wordpress
     spec:
-      serviceAccount: rene
+      serviceAccount: services
       containers:
       - name: wordpress
         image: my-wordpress

@@ -14,7 +14,7 @@ spec:
       labels:
         app: ftps
     spec:
-      serviceAccount: rene
+      serviceAccount: services
       containers:
       - name: ftps
         image: my-ftps
