@@ -27,7 +27,7 @@ docker build -t my-nginx srcs/nginx/
 kubectl apply -f srcs/nginx/nginx.yaml
 
 # # Creating ftps:
-docker build -t my-ftps srcs/ftps/
+# docker build -t my-ftps srcs/ftps/
 # kubectl apply -f srcs/ftps/ftps.yaml
 
 # # Creating phpmyadmin:

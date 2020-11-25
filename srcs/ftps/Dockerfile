@@ -12,7 +12,13 @@ RUN		mkdir -p /ftps
 RUN		adduser -D rene -h /ftps
 RUN		echo "rene:password" | chpasswd
 
-RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/user.key -out /etc/ssl/user.crt -subj '/C=NL/ST=Noord-Holland/L=Amsterdam/O=Codam/CN=ft_services'
+RUN 	openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/user.key -out /etc/ssl/user.crt -subj '/C=NL/ST=Noord-Holland/L=Amsterdam/O=Codam/CN=ft_services'
 
+COPY 	vsftpd.conf etc/vsftpd/vsftpd.conf
+COPY 	setup.sh ftp/
+RUN 	chmod +x ftp/setup.sh
 
+EXPOSE 20 21 30020 30021
+
+CMD 	/ftp/setup.sh
 # File Transfer Protocol, is used to transfer files between computer and server in a given computer network.

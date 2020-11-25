@@ -38,4 +38,6 @@ https://linoxide.com/linux-how-to/configure-vsftpd-sftp-ubuntu/
 Ftps
 
 https://www.digitalocean.com/community/tutorials/how-to-set-up-vsftpd-for-a-user-s-directory-on-ubuntu-16-04
+https://www.tecmint.com/secure-ftp-server-using-ssl-tls-on-ubuntu/
+https://serverfault.com/questions/1005097/ftps-server-doesnt-work-properly-using-kubernetes
 Vsftpd.conf
