@@ -14,7 +14,7 @@ echo "\n----> Creating metalLB environment <----\n"
 kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
 kubectl apply -f srcs/metallb.yaml
 
-Need to setup serviceaccount metallb?
+# Need to setup serviceaccount metallb?
 kubectl apply -f srcs/serviceaccount.yaml
 
 eval $(minikube docker-env)
