@@ -41,3 +41,8 @@ https://www.digitalocean.com/community/tutorials/how-to-set-up-vsftpd-for-a-user
 https://www.tecmint.com/secure-ftp-server-using-ssl-tls-on-ubuntu/
 https://serverfault.com/questions/1005097/ftps-server-doesnt-work-properly-using-kubernetes
 Vsftpd.conf
+
+https://stackoverflow.com/questions/2482234/how-do-i-find-the-mysql-my-cnf-location
+https://mariadb.com/kb/en/configuring-mariadb-with-option-files/
+https://github.com/taz77/docker-alpine-mysql/blob/master/my.cnf
+my.cnf
