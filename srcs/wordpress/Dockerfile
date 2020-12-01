@@ -20,7 +20,7 @@ RUN 	mv wp-cli.phar /usr/local/bin/wp
 RUN 	chmod +x /www
 RUN		wp core download --path=/www
 
-COPY	wp-config.php /www/
+# COPY	wp-config.php /www/
 COPY	setup.sh /
 RUN		chmod +x /setup.sh
 

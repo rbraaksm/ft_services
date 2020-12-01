@@ -1,4 +1,4 @@
-FROM	alpine:latest
+FROM 	alpine:latest
 
 RUN		apk update
 RUN		apk add php7 php7-mysqli php7-fpm php7-curl php7-json php7-mbstring php7-xml php7-zip php7-gd php7-soap php7-ssh2 php7-tokenizer
@@ -7,6 +7,7 @@ RUN		apk add nginx
 RUN		adduser -D -g 'www' www
 RUN		mkdir -p /www
 RUN 	mkdir -p /www/phpmyadmin
+RUN		mkdir -p /run/nginx
 RUN		chown -R www:www /var/lib/nginx
 RUN		chown -R www:www /www
 
@@ -14,12 +15,11 @@ RUN		wget https://files.phpmyadmin.net/phpMyAdmin/5.0.4/phpMyAdmin-5.0.4-all-lan
 RUN 	tar xzf phpMyAdmin-5.0.4-all-languages.tar.gz -C /www
 RUN 	rm phpMyAdmin-5.0.4-all-languages.tar.gz
 
-COPY 	config.inc.php /www
-# COPY 	config.inc.php /www/phpmyadmin
+COPY	 config.inc.php /www/
 COPY 	nginx.conf /etc/nginx/nginx.conf
 COPY 	setup.sh /
 RUN 	chmod +x /setup.sh
 
-EXPOSE 5000
+EXPOSE 	5000
 
-CMD ./setup.sh
+CMD 	./setup.sh
