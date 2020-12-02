@@ -19,7 +19,7 @@ RUN adduser -D rene -h / && \
 RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/user.key -out /etc/ssl/user.crt -subj '/C=NL/ST=Noord-Holland/L=Amsterdam/O=Codam/CN=ft_services'
 
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY index.html /www/index.html
+COPY index.html /www/
 COPY sshd_config /etc/ssh/sshd_config
 COPY setup.sh ./
 

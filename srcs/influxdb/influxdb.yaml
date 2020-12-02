@@ -1,63 +1,56 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mysql
+  name: influxdb
   labels:
-    app: mysql
+    app: influxdb
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mysql
+      app: influxdb
   template:
     metadata:
       labels:
-        app: mysql
+        app: influxdb
     spec:
       containers:
-      - name: mysql
-        image: my-mysql
+      - name: influxdb
+        image: my-influxdb
         imagePullPolicy: Never
         ports:
-        - containerPort: 3306
-          name: mysql
-        env:
-        - name: DB_NAME
-          value: wordpress
-        - name: DB_USER
-          value: mysql
-        - name: DB_PASS
-          value: password
+        - containerPort: 8086
+          name: influxdb
         volumeMounts:
-        - name: mysql-persistent
-          mountPath: /var/lib/mysql
+        - name: influxdb-persistent
+          mountPath: /var/lib/influxdb
       volumes:
-      - name: mysql-persistent
+      - name: influxdb-persistent
         persistentVolumeClaim:
-          claimName: mysql-pv-claim
+          claimName: influxdb-pv-claim
 ---
 apiVersion: v1
 kind: Service
 metadata:
   annotations:
       metallb.universe.tf/allow-shared-ip: shared
-  name: mysql
+  name: influxdb
   labels:
-      app: mysql
+      app: influxdb
 spec:
   selector:
-    app: mysql
+    app: influxdb
   ports:
-  - name: mysql
-    port: 3306
+  - name: influxdb
+    port: 8086
   type: ClusterIP
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: mysql-pv-claim
+  name: influxdb-pv-claim
   labels:
-    app: mysql
+    app: influxdb
 spec:
   accessModes:
     - ReadWriteOnce
