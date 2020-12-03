@@ -26,9 +26,9 @@ spec:
         - name: DB_HOST
           value: mysql
         - name: DB_NAME
-          value: wordpress
+          value: rene
         - name: DB_USER
-          value: mysql
+          value: wordpress
         - name: DB_PASS
           value: password
 ---
