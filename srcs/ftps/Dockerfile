@@ -1,6 +1,7 @@
 FROM 	alpine:latest
 
 RUN 	apk update
+RUN 	apk upgrade
 # vsftpd is a GPL licensed FTP server for UNIX systems, including Linux. It is secure and extremely fast. It is stable
 RUN 	apk add vsftpd
 
@@ -8,17 +9,17 @@ RUN 	apk add vsftpd
 RUN 	apk add jq
 RUN 	apk add openssl
 
-RUN		mkdir -p /ftps
-RUN		adduser -D rene -h /ftps
-RUN		echo "rene:password" | chpasswd
+RUN 	openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/vsftpd.key -out /etc/ssl/certs/vsftpd.crt -subj '/C=NL/ST=NH/O=CODAM/CN=rene'
+RUN 	mkdir -p /var/ftp
 
-RUN 	openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/user.key -out /etc/ssl/user.crt -subj '/C=NL/ST=Noord-Holland/L=Amsterdam/O=Codam/CN=ft_services'
+RUN		adduser -D -h /var/ftp rene
+RUN		echo "rene:ft_services" | chpasswd
 
-COPY 	vsftpd.conf etc/vsftpd/vsftpd.conf
+COPY 	vsftpd.conf /etc/vsftpd/vsftpd.conf
 COPY 	setup.sh ./
-RUN 	chmod +x setup.sh
 
-EXPOSE  20 21 30020 30021
+EXPOSE 20 21 30000 30001 30002
 
 CMD 	./setup.sh
-# File Transfer Protocol, is used to transfer files between computer and server in a given computer network.
+
+# # File Transfer Protocol, is used to transfer files between computer and server in a given computer network.

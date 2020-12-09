@@ -1,3 +1,28 @@
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: telegraf
+#   labels:
+#     app: telegraf
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app: telegraf
+#   template:
+#     metadata:
+#       labels:
+#         app: telegraf
+#     spec:
+#       serviceAccount: services
+#       containers:
+#       - name: telegraf
+#         image: my-telegraf
+#         imagePullPolicy: Never
+#         ports:
+#         - containerPort: 8125
+#           name: telegraf
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -19,6 +44,16 @@ spec:
       - name: telegraf
         image: my-telegraf
         imagePullPolicy: Never
-        ports:
-        - containerPort: 8125
-          name: telegraf
+        envFrom:
+          - secretRef:
+              name: influx-secret
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: influx-secret
+type: Opaque
+stringData:
+  INFLUX_URL: http://influxdb-svc:8086
+  INFLUX_USER: user
+  INFLUX_PASSWORD: pass

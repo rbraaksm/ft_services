@@ -46,3 +46,6 @@ https://stackoverflow.com/questions/2482234/how-do-i-find-the-mysql-my-cnf-locat
 https://mariadb.com/kb/en/configuring-mariadb-with-option-files/
 https://github.com/taz77/docker-alpine-mysql/blob/master/my.cnf
 my.cnf
+
+https://docs.gitlab.com/ee/administration/monitoring/performance/grafana_configuration.html#:~:text=Before%20starting%20Grafana%20for%20the,the%20default%20password%20is%20admin%20.
+grafana
