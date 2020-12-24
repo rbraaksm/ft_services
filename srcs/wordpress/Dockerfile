@@ -28,7 +28,6 @@ RUN		wp core download --path=/www
 
 COPY	setup.sh /
 RUN		chmod +x /setup.sh
-# COPY 	wp-config.php www/
 
 EXPOSE	5050
 

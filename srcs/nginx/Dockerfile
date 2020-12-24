@@ -13,8 +13,8 @@ RUN 	chown -R www:www /var/lib/nginx
 RUN 	chown -R www:www /www
 
 #add user for ssh -D=Don't assign a password -h=Home directory
-RUN 	adduser -D rene -h / && \
-		echo "rene:ft_services" | chpasswd
+RUN 	adduser -D rbraaksm -h / && \
+		echo "rbraaksm:ft_services" | chpasswd
 
 RUN 	openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/user.key -out /etc/ssl/user.crt -subj '/C=NL/ST=Noord-Holland/L=Amsterdam/O=Codam/CN=ft_services'
 

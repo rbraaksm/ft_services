@@ -38,8 +38,6 @@ spec:
   selector:
     matchLabels:
       app: ftps
-  # strategy:
-  #   type: Recreate
   replicas: 1
   template:
     metadata:
@@ -49,7 +47,7 @@ spec:
       serviceAccount: services
       containers:
       - name: ftps
-        image: my-ftps
+        image: container-ftps
         imagePullPolicy: Never
         ports:
         - containerPort: 20

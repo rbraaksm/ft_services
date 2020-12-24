@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: my-mysql
+        image: container-mysql
         imagePullPolicy: Never
         ports:
         - containerPort: 3306
@@ -25,7 +25,7 @@ spec:
         - name: DB_NAME
           value: wordpress
         - name: DB_USER
-          value: ft_services
+          value: rbraaksma
         - name: DB_PASS
           value: ft_services
         volumeMounts:
